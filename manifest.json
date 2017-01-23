@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Woof",
+  "description": "Translates a page into dog-readable language.",
+  "version": "0.0.1",
+
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "storage"
+  ],
+
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery-3.1.1.min.js","main.js"]
+    }
+  ],
+
+  "background":
+    {
+        "scripts": ["jquery-3.1.1.min.js"]
+    },
+
+  "browser_action" : {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "woofify"
+  }
+}
